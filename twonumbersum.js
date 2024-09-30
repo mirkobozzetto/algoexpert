@@ -5,31 +5,31 @@ const twoSum = (arr, target) => {
   for (let i = 0; i < arr.length; i++) {
     const currentElement = arr[i];
     const complement = target - currentElement;
-    // Exemple : Si target = 10 et currentElement = 3, alors complement = 10 - 3 = 7
-    // Si 7 existe dans le tableau, nous avons trouvé une paire (3, 7) dont la somme est 10
+    // Example: If target = 10 and currentElement = 3, then complement = 10 - 3 = 7
+    // If 7 exists in the array, we have found a pair (3, 7) whose sum is 10
 
-    console.log(`Itération ${i + 1}:`);
-    console.log(`  Élément actuel: ${currentElement}`);
-    console.log(`  Complément recherché: ${complement}`);
+    console.log(`Iteration ${i + 1}:`);
+    console.log(`  Current element: ${currentElement}`);
+    console.log(`  Complement sought: ${complement}`);
 
     if (complement in numObj) {
-      // Exemple: Si complement = 7 et numObj = {3: 0}, alors cette condition est vraie
+      // Example: If complement = 7 and numObj = {3: 0}, then this condition is true
 
       console.log(
-        `  Complément trouvé! Ajoute [${complement}, ${currentElement}] au résultat`
+        `  Complement found! Adding [${complement}, ${currentElement}] to the result`
       );
       result.push([complement, currentElement]);
-      // Si la condition est vraie, on ajoute le couple à la variable result
-      // Par exemple, si complement = 7 et currentElement = 3, result devient [[7, 3]]
+      // If the condition is true, we add the pair to the result variable
+      // For example, if complement = 7 and currentElement = 3, result becomes [[7, 3]]
     }
 
     numObj[currentElement] = i;
-    // Exemple: Si currentElement = 3 et i = 0, cela devient:
+    // Example: If currentElement = 3 and i = 0, this becomes:
     // numObj[3] = 0;
-    // Ce qui signifie que le nombre 3 a été trouvé à l'index 0 du tableau
+    // This means that the number 3 was found at index 0 of the array
 
-    console.log(`  Ajout de ${currentElement} à numObj`);
-    console.log(`  numObj après ajout: `, numObj);
+    console.log(`  Adding ${currentElement} to numObj`);
+    console.log(`  numObj after addition: `, numObj);
     console.log("------------------------");
   }
 
@@ -39,13 +39,11 @@ const twoSum = (arr, target) => {
 
 const logResult = (result) => {
   console.log(
-    result.length > 0
-      ? `${result.length} paire(s) trouvée(s)`
-      : "Aucune paire trouvée"
+    result.length > 0 ? `${result.length} pair(s) found` : "No pairs found"
   );
 };
 
 const arr = [3, 5, -4, 8, 11, 1, -1, 6, 4];
 const target = 10;
 
-console.log("Résultat final:", twoSum(arr, target));
+console.log("Final result:", twoSum(arr, target));
